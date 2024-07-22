@@ -1,0 +1,104 @@
+.navbar {
+    background-color: antiquewhite;
+}
+
+.mobile-navbar {
+    display: none;
+}
+
+
+.navbar-container {
+    justify-self: center;
+}
+
+
+
+
+.logo {
+    cursor: pointer;
+    width: 100px;
+
+}
+
+
+.join-btn {
+    background-color: rgb(21, 169, 214);
+    border-radius: 3px;
+    height: 200%;
+    width: 20%;
+    justify-self: flex-end;
+    flex-shrink: 0;
+    cursor: pointer;
+    font-size: 1.15rem;
+
+
+}
+
+.icons {
+    background-color: black;
+    font-size: 200%;
+    cursor: pointer;
+    display: none;
+}
+
+.navbar a {
+    font-size: 1.15rem;
+    color: #000000;
+    text-decoration: none; 
+    font-weight: 500;
+    margin-left: 2.5rem ;
+    background-color: antiquewhite;
+}
+
+.navbar-end-section {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    background-color: antiquewhite;
+}
+
+/* Break Points */
+
+@media (max-width: 1000px) {
+    header {
+        grid-template-columns: repeat(3, 1fr);
+        flex-grow: 0;
+    }
+
+    .navbar a {
+        display: none;
+    }
+
+    .join-btn{
+        display: none;
+    }
+
+    .icons {
+        display: flex;
+    }
+
+    .mobile-navbar {
+        display: block;
+        position: absolute;
+        top: 100%;
+        height: 17rem;
+        margin-left: -250px;
+        padding-left: 200px;
+        padding-right: 200px;
+        background-color: red;
+    }
+    
+    .mobile-navbar a {
+        display: block;
+        background-color: red;
+        font-size: 2.15rem;
+        color: #000000;
+        text-decoration: none; 
+        text-align: center;
+        font-weight: 500;
+        margin-top: 30%;
+        background-color: antiquewhite;
+        padding: 0rem 1rem 0 1rem; 
+    }
+    
+}

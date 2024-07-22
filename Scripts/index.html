@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="navbar.css">
+
+    <!-- google maps pull-->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBSljvBrbruuhy_C3Tnf9SoR2GkCsHAfCk&callback=initMap"
+    async defer></script>
+
+    <title>Document</title>
+        <style>
+        .mobile-navbar {
+            display: none;
+        }
+        </style>
+</head>
+
+<!-- Note change module names after layout !!!-->
+
+<body>
+    <!-- Parent Container -->
+     <div class="div-container">
+
+        <!-- Navbar -->
+        <div class="navbar">
+            <img src="/Art/Logo/logo.png" class="logo">
+            <div class="navbar-container">
+                <nav class="navbar">
+                    <a href="#"> Home </a>
+                    <a href="#"> About </a>
+                    <a href="#"> Gallery </a>
+                </nav>
+
+                <nav class="mobile-navbar">
+                    <a href="#"> Home </a>
+                    <a href="#"> About </a>
+                    <a href="#"> Gallery </a>
+                </nav>
+            </div>
+
+            
+
+            <div class="navbar-end-section">
+                <button type="button" class="join-btn">Join</button>
+
+                <label for="" class="icons">
+                    <i class="bx bx-menu" id="menu-icon"></i>
+                </label>
+            </div>
+        </div>
+
+        <div class="blank-1"> 
+            <div class="entry-location">
+                <form class="entry-form">
+                    <p class="entry-label"> Enter Your Address : </p>
+                    <input type="text" id="entry-address" value="147 Willow Spring Road">
+                </form>
+            </div>
+        </div>
+            
+        <!-- Section 1 -->
+        <div class="section-1">
+            <!-- tab -->
+            <div class="tab">
+                <button class="tablinks"> TODAY </button>
+                <button class="tablinks"> HOURLY</button>
+                <button class="tablinks"> WEEKLY</button>
+            </div>
+            <!-- Module 1 -->
+            <div class="main-content">
+                <div class="location-map">
+                    <div id="map"></div>
+                </div>
+                <!-- Module 2 -->
+                <div class="weather-card">
+                    <p> card </p>
+                </div>
+                <!-- Module 2 -->
+                <div class="stats">
+                    <p> stats </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="blank-2"> 
+            <p> blank 2 </p>
+        </div>
+
+        <!-- Section 2 -->
+        <div class="section-2">
+            <!-- tab -->
+            <div class="tab">  
+                    <button class="tablinks"> TODAY </button>
+                    <button class="tablinks"> HOURLY </button>
+            </div>
+            <div class="extra-content">
+
+                <!-- Module 1 -->
+                <div class="Morning">
+
+                </div>
+
+                <!-- Module 1 -->
+                <div class="Night">
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script src="script.js"> </script>
+
+</body>
+</html>
