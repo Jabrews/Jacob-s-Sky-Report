@@ -6,6 +6,9 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="navbar.css">
 
+    <!-- hamburger icon -->
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+
     <!-- google maps pull-->
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBSljvBrbruuhy_C3Tnf9SoR2GkCsHAfCk&callback=initMap"
     async defer></script>
@@ -21,36 +24,34 @@
 <!-- Note change module names after layout !!!-->
 
 <body>
+    <header>
+        <img src="/Art/Logo/logo.png" class="logo">
+        <div class="navbar">
+            <div class="navbar-container">
+                <nav class="navbar">
+                    <a href="#"> Find Me </a>
+                </nav>
+
+                <nav class="mobile-navbar">
+                    <a href="#"> Find Me </a>
+                </nav>
+            </div>
+        </div>
+        <div class="navbar-end-section">
+            <button type="button" class="join-btn">Join</button>
+
+            <label for="" class="icons">
+                <i class="bx bx-menu" id="menu-icon"></i>
+            </label>
+        </div>
+        </div>
+    </header>
+
     <!-- Parent Container -->
      <div class="div-container">
 
         <!-- Navbar -->
-        <div class="navbar">
-            <img src="/Art/Logo/logo.png" class="logo">
-            <div class="navbar-container">
-                <nav class="navbar">
-                    <a href="#"> Home </a>
-                    <a href="#"> About </a>
-                    <a href="#"> Gallery </a>
-                </nav>
-
-                <nav class="mobile-navbar">
-                    <a href="#"> Home </a>
-                    <a href="#"> About </a>
-                    <a href="#"> Gallery </a>
-                </nav>
-            </div>
-
-            
-
-            <div class="navbar-end-section">
-                <button type="button" class="join-btn">Join</button>
-
-                <label for="" class="icons">
-                    <i class="bx bx-menu" id="menu-icon"></i>
-                </label>
-            </div>
-        </div>
+        
 
         <div class="blank-1"> 
             <div class="entry-location">
@@ -93,8 +94,8 @@
         <div class="section-2">
             <!-- tab -->
             <div class="tab">  
-                    <button class="tablinks"> TODAY </button>
-                    <button class="tablinks"> HOURLY </button>
+                    <button class="tablinks"> TOMMOROW </button>
+                    <button class="tablinks"> YESTERDAY </button>
             </div>
             <div class="extra-content">
 

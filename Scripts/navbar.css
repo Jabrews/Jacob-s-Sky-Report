@@ -1,5 +1,6 @@
 .navbar {
     background-color: antiquewhite;
+    
 }
 
 .mobile-navbar {
@@ -13,10 +14,10 @@
 
 
 
-
 .logo {
+    overflow: hidden;
     cursor: pointer;
-    width: 100px;
+    width: 175px;
 
 }
 
@@ -30,19 +31,20 @@
     flex-shrink: 0;
     cursor: pointer;
     font-size: 1.15rem;
+    text-decoration: underline;
+
 
 
 }
 
 .icons {
-    background-color: black;
     font-size: 200%;
     cursor: pointer;
     display: none;
 }
 
 .navbar a {
-    font-size: 1.15rem;
+    font-size: 1.35rem;
     color: #000000;
     text-decoration: none; 
     font-weight: 500;
@@ -52,7 +54,7 @@
 
 .navbar-end-section {
     display: flex;
-    justify-content: flex-end;
+    justify-self: flex-middle;
     align-items: center;
     background-color: antiquewhite;
 }
@@ -82,15 +84,15 @@
         position: absolute;
         top: 100%;
         height: 17rem;
-        margin-left: -250px;
-        padding-left: 200px;
-        padding-right: 200px;
-        background-color: red;
+        padding-right: 25%;
+        padding-left: 20%;
+
+        background-color: rgb(255, 0, 0);
     }
     
     .mobile-navbar a {
         display: block;
-        background-color: red;
+        background-color: #5a5a5a;
         font-size: 2.15rem;
         color: #000000;
         text-decoration: none; 
