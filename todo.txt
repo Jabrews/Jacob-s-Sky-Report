@@ -1,6 +1,8 @@
 
-2. Create request for location 
+Create request for location 
+    - from the address input allow user to give location EASILY and then unlock rest of page
+        - show up with error up top if failure
+        - creatw map with user location (coordniate conversation)
 
-3. allow user to change location 
+Initlalize map with the users data **i want to do fetch, is this wrong and how (look it up !!) COORDNIATES
 
-4. convert map script to fetch requests 

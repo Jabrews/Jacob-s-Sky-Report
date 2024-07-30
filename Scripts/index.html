@@ -10,7 +10,7 @@
     <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
 
     <!-- google maps pull-->
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBSljvBrbruuhy_C3Tnf9SoR2GkCsHAfCk&callback=initMap"
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBSljvBrbruuhy_C3Tnf9SoR2GkCsHAfCk&loading=async&libraries=places&callback=initMap"
     async defer></script>
 
     <title>Document</title>
@@ -18,6 +18,11 @@
         .mobile-navbar {
             display: none;
         }
+
+        .search-error {
+            display: none;
+        }
+ 
         </style>
 </head>
 
@@ -47,20 +52,28 @@
         </div>
     </header>
 
+    <div class="search-error">
+        <p> error has occured </p>
+    </div>
+
+    <div class="blank-1"> 
+        <div class="entry-location">
+            <form class="entry-form">
+                <p class="entry-label-1"> Search Address: </p>
+                <div class="input-container">
+                    <input type="text" autocomplete="off" id="entry-address" placeholder="123 happy street rd, sometown, tx 12345, usa">
+                </div>
+                <p class="entry-label"> Select : </p>
+                <input id="placeholder-text"></input>
+                <button id="submit-button"> SUBMIT </button>
+            </form>
+        </div>
+    </div>
+
     <!-- Parent Container -->
      <div class="div-container">
 
         <!-- Navbar -->
-        
-
-        <div class="blank-1"> 
-            <div class="entry-location">
-                <form class="entry-form">
-                    <p class="entry-label"> Enter Your Address : </p>
-                    <input type="text" id="entry-address" value="147 Willow Spring Road">
-                </form>
-            </div>
-        </div>
             
         <!-- Section 1 -->
         <div class="section-1">
