@@ -1,5 +1,5 @@
 .navbar {
-    background-color: antiquewhite;
+    background-color: rgb(128 255 219);
     
 }
 
@@ -49,14 +49,14 @@
     text-decoration: none; 
     font-weight: 500;
     margin-left: 2.5rem ;
-    background-color: antiquewhite;
+    background-color: rgb(128 255 219);
 }
 
 .navbar-end-section {
     display: flex;
     justify-self: flex-middle;
     align-items: center;
-    background-color: antiquewhite;
+    background-color: rgb(128 255 219);
 }
 
 /* Break Points */

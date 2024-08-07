@@ -1,8 +1,15 @@
 
-Create request for location 
-    - from the address input allow user to give location EASILY and then unlock rest of page
-        - show up with error up top if failure
-        - creatw map with user location (coordniate conversation)
+find how to hide api keys
+deal with bad request from api's (404 304 505 type sht)
 
-Initlalize map with the users data **i want to do fetch, is this wrong and how (look it up !!) COORDNIATES
+1. Finish all content of first section
+    - weather display card
+        - Clean up code :
+            - Better initialization of page content 
+            - Sort functions better and better names
+            - clean up style sheet / make more indivutal ones 
+
+        - Use google maps info for retreving data from weather api
+    - weather stats 
+
 

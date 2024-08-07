@@ -3,9 +3,10 @@ const nav_menu = document.querySelector('.mobile-navbar');
 const parentDiv = document.querySelector('.div-container');
 const enterLocationDiv = document.querySelector('.blank-1');
 const  entryAddressInput = document.querySelector('#entry-address'); //change to search
-const entryAddressPlaceholder = document.querySelector('#placeholder-text') //change to input
-const entryAddressForm = document.querySelector('.entry-form')
-const InputAddressError = document.querySelector('.search-error')
+const entryAddressPlaceholder = document.querySelector('#placeholder-text'); //change to input
+const entryAddressForm = document.querySelector('.entry-form');
+const InputAddressError = document.querySelector('.search-error');
+const mapLocationDisplay = document.querySelector('#map-location-display');
 
 function showNavMenu() {
     if (nav_menu.style.display === 'none') {
@@ -60,8 +61,10 @@ async function submitGeoLocation(e) {
 
         console.log(`Coordinates: ${lat}, ${lng}`);
 
-        initMap(lat, lng)
+        initMap(lat, lng, userAddress)
+        fetchDataFromApi(lat, lng)
         show_page()
+        
 
     } catch (error) {
         console.error(error);
@@ -125,9 +128,8 @@ function show_page() {
 }
 
 function curSuccess(pos) {
-    const coord = pos.coords;
-    
-    console.log(`Latitude: ${coord.latitude}, longitude: ${coord.longitude}`)
+    initMap(pos.coords.latitude, pos.coords.longitude, `Latitude : ${pos.coords.latitude.toFixed(4)} Longitude : ${pos.coords.longitude.toFixed(4)}`)
+    show_page()
 }
 
 const curOptions = { 
@@ -137,7 +139,7 @@ const curOptions = {
 
 }
 
-function initMap(lat, lng) {
+function initMap(lat, lng, userAddress='') {
     // The location we want to center the map on
 
     // Create the map, centered at myLatLng
@@ -150,7 +152,12 @@ function initMap(lat, lng) {
     const marker = new google.maps.Marker({
         position: {lat: lat, lng: lng},
         map: map,
-    });
+    })
+
+    if (userAddress !== '') {
+        mapLocationDisplay.value = userAddress;
+    }
+
 }
 
 
@@ -160,6 +167,18 @@ function init() {
     entryAddressInput.addEventListener('input', detectGeolocation)
     entryAddressForm.addEventListener('submit', submitGeoLocation)
 }
+
+function fetchDataFromApi(lat,lng,type=null) {
+    fetch(`https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${lat},${lng}?key=ZP3RFPFC92PX6ZFAFJFWTKNPZ` 
+    )
+    .then(res => {
+        console.log(res);
+    })
+    .then(data => {
+        console.log(data)
+    });
+}
+
 
  
 document.addEventListener('DOMContentLoaded', init);

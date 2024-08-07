@@ -3,8 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="navbar.css">
+    <link rel="stylesheet" href="Style/style.css">
+    <link rel="stylesheet" href="Style/navbar.css">
+    <link rel="stylesheet" href="Style/tabs.css">
+
 
     <!-- hamburger icon -->
     <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
@@ -43,7 +45,6 @@
             </div>
         </div>
         <div class="navbar-end-section">
-            <button type="button" class="join-btn">Join</button>
 
             <label for="" class="icons">
                 <i class="bx bx-menu" id="menu-icon"></i>
@@ -61,10 +62,10 @@
             <form class="entry-form">
                 <p class="entry-label-1"> Search Address: </p>
                 <div class="input-container">
-                    <input type="text" autocomplete="off" id="entry-address" placeholder="123 happy street rd, sometown, tx 12345, usa">
+                    <input type="text" autocomplete="off" id="entry-address" placeholder="123 happy street rd, sometown, tx 12345, usa"> 
                 </div>
-                <p class="entry-label"> Select : </p>
-                <input id="placeholder-text"></input>
+                <p class="entry-label-2"> Select : </p>
+                <input id="placeholder-text"> </input>
                 <button id="submit-button"> SUBMIT </button>
             </form>
         </div>
@@ -85,15 +86,29 @@
             </div>
             <!-- Module 1 -->
             <div class="main-content">
-                <div class="location-map">
+                <div class="map-card">
                     <div id="map"></div>
+                    <div class="map-location-container">
+                        <p id="map-location-label"> Current Location : </p>
+                        <input type="text" autocomplete="off" id="map-location-display" placeholder="" readonly> 
+                    </div>
                 </div>
                 <!-- Module 2 -->
                 <div class="weather-card">
-                    <p> card </p>
+                    <div class="weather-card-container">
+                        <div class="day-display">
+                            <p> day display </p>
+                        </div>
+                        <div class="icon-display">
+                            <p> icon display </p>
+                        </div>
+                        <div class="footer-display">
+                            <p> footer display </p>
+                        </div>
+                    </div>
                 </div>
                 <!-- Module 2 -->
-                <div class="stats">
+                <div class="stats-card">
                     <p> stats </p>
                 </div>
             </div>
