@@ -7,7 +7,6 @@
   
   /* Style the buttons inside the tab */
   .tab button {
-    background-color: inherit;
     float: left;
     border: none;
     outline: none;
@@ -19,7 +18,7 @@
   
   /* Change background color of buttons on hover */
   .tab button:hover {
-    background-color: #ddd;
+    background-color: #e5e5e5;
   }
   
   /* Create an active/current tablink class */
@@ -33,4 +32,16 @@
     padding: 6px 12px;
     border: 1px solid #ccc;
     border-top: none;
+  }
+
+  .tabactive {
+    background-color: #ddd;
+  }
+
+  .tab-panel-1 {
+      
+  }
+
+  .tab-panel-2 { 
+
   }

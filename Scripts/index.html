@@ -15,7 +15,9 @@
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBSljvBrbruuhy_C3Tnf9SoR2GkCsHAfCk&loading=async&libraries=places&callback=initMap"
     async defer></script>
 
-    <title>Document</title>
+    
+    <title>Jacob's Sky Report</title>
+
         <style>
         .mobile-navbar {
             display: none;
@@ -65,7 +67,7 @@
                     <input type="text" autocomplete="off" id="entry-address" placeholder="123 happy street rd, sometown, tx 12345, usa"> 
                 </div>
                 <p class="entry-label-2"> Select : </p>
-                <input id="placeholder-text"> </input>
+                <input id="placeholder-text"> 
                 <button id="submit-button"> SUBMIT </button>
             </form>
         </div>
@@ -79,8 +81,8 @@
         <!-- Section 1 -->
         <div class="section-1">
             <!-- tab -->
-            <div class="tab">
-                <button class="tablinks"> TODAY </button>
+            <div class="tab tab-panel-1">
+                <button class="tablinks tabactive"> TODAY </button>
                 <button class="tablinks"> HOURLY</button>
                 <button class="tablinks"> WEEKLY</button>
             </div>
@@ -96,45 +98,89 @@
                 <!-- Module 2 -->
                 <div class="weather-card">
                     <div class="weather-card-container">
-                        <div class="day-display">
-                            <p> day display </p>
+                        <div>
+                            <p class="card-display" id="day-display"> day display </p>
                         </div>
-                        <div class="icon-display">
-                            <p> icon display </p>
+                        <div class="icon-border">
+                            <img class="card-display" id="icon-display" src="/Art/weather-icons/placeholder.png"> 
                         </div>
-                        <div class="footer-display">
-                            <p> footer display </p>
+                        <div>
+                            <p class="card-display" id="conditions-display"> conditions display </p>
+                        </div>
+                        <div>
+                            <p class="card-display" id="temp-display"> temp display </p>
                         </div>
                     </div>
                 </div>
                 <!-- Module 2 -->
                 <div class="stats-card">
-                    <p> stats </p>
+                    <div class="stat-display-container">
+                        <!-- precipitation-->
+                        <p class="stat-label" id="precipitation-label"> Precipitation </p>
+                        <input class="stat-display" id="precipitation-display" readonly> 
+                        <!-- pollen-->
+                        <p class="stat-label" id="humidity-label"> Humidity </p>
+                        <input class="stat-display" id="humidity-display" readonly> 
+                        <!-- uv-->
+                        <p class="stat-label" id="uv-label"> UV Index </p>
+                        <input class="stat-display" id="uv-display" readonly> 
+                        <!-- wind-->
+                        <p class="stat-label" id="wind-label"> Wind Speed </p>
+                        <input class="stat-display" id="wind-display" readonly> 
+                        <!-- air quality-->
+                        <p class="stat-label" id="air-label"> Air Quality </p>
+                        <input class="stat-display" id="air-display" readonly> 
+                    </div>
                 </div>
             </div>
         </div>
 
         <div class="blank-2"> 
-            <p> blank 2 </p>
+            <br>
         </div>
 
         <!-- Section 2 -->
         <div class="section-2">
             <!-- tab -->
-            <div class="tab">  
-                    <button class="tablinks"> TOMMOROW </button>
-                    <button class="tablinks"> YESTERDAY </button>
+            <div class="tab tab-panel-2"  >
+                    <button class="tablinks tabactive yesterday"> YESTERDAY </button>
+                    <button class="tablinks tommorow"> TOMMOROW </button>
             </div>
-            <div class="extra-content">
-
+            <div class="footer-content-container">
                 <!-- Module 1 -->
-                <div class="Morning">
-
+                <div class="footer-card Morning">
+                    <div class="morning-container">
+                            <h1 class="extra-label morning-label"> Blah Morning </h1>
+                            <p class="preview-card morning-card"> 11/11/1111 - rainy - 1d</p>
+                            <div class="foot-container">
+                                <ul class="stat-list morning-stat-list">
+                                    <li id="morning-precipitation"> sample1 </li>
+                                    <li id="morning-humidity"> sample1 </li>
+                                    <li id="morning-uv"> sample1 </li>
+                                    <li id="morning-wind"> sample1 </li>
+                                    <li id="morning-air"> sample1 </li>
+                                </ul>
+                                <img class="footer-picture morning-picture" src="/Art/weather-icons/placeholder-footer.png">
+                            </div>
+                    </div>
                 </div>
 
                 <!-- Module 1 -->
-                <div class="Night">
-
+                <div class="footer-card Night">
+                    <div class="footer-card night-container">
+                        <h1 class="extra-label night-label"> Blah Morning </h1>
+                            <p class="preview-card night-card"> 11/11/1111 - rainy - 1d</p>
+                            <div class="foot-container">
+                                <ul class="stat-list night-stat-list">
+                                    <li id="night-precipitation"> sample1 </li>
+                                    <li id="night-humidity"> sample1 </li>
+                                    <li id="night-uv"> sample1 </li>
+                                    <li id="night-wind"> sample1 </li>
+                                    <li id="night-air"> sample1 </li>
+                                </ul>
+                                <img class="footer-picture night-picture" src="/Art/weather-icons/placeholder-footer.png">
+                            </div>
+                    </div>
                 </div>
             </div>
         </div>
