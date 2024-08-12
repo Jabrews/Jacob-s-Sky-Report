@@ -88,7 +88,6 @@ async function submitGeoLocation(e) {
     e.preventDefault();
 
     let userAddress = entryAddressPlaceholder.value;
-    console.log(`submitted: ${userAddress}`);
 
     try {
         let coords = await getCoordsFromAddress(userAddress);
@@ -97,11 +96,9 @@ async function submitGeoLocation(e) {
         lat_global = lat;
         lng_global = lng;
 
-        console.log(`Coordinates: ${lat}, ${lng}`);
 
         initMap(lat, lng, userAddress);
         let weatherData = await fetchDataFromApi(lat, lng, '');
-        console.log('weatherData:', weatherData);
         loadStatDisplay(weatherData);
         loadCardDisplay(weatherData);
         let footWeatherData = await fetchDataFromApi(lat, lng, "yesterday");
@@ -177,10 +174,10 @@ function show_page() {
 
 async function curSuccess(pos) {
     initMap(pos.coords.latitude, pos.coords.longitude, `Latitude : ${pos.coords.latitude.toFixed(4)} Longitude : ${pos.coords.longitude.toFixed(4)}`)
-    let weatherData = await fetchDataFromApi(lat, lng, '');
+    let weatherData = await fetchDataFromApi(pos.coords.latitude, pos.coords.longitude, '');
     loadStatDisplay(weatherData);
     loadCardDisplay(weatherData);
-    let footWeatherData = await fetchDataFromApi(lat, lng, "yesterday");
+    let footWeatherData = await fetchDataFromApi(pos.coords.latitude, pos.coords.longitude, "yesterday");
     changeFooterLabel('Yesterday')
     loadFooterDisplay(footWeatherData);
     show_page()
@@ -227,7 +224,6 @@ async function fetchDataFromApi(lat, lng, type='') {
         endPoint = ''
     }
     try {
-        console.log('endpont' + endPoint);
         let response = await fetch(`https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${lat},${lng}${endPoint}?key=EHSE5NA36NBC3KD7PS6NGVYLM`);
         if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
@@ -333,3 +329,4 @@ function init() {
 
  
 document.addEventListener('DOMContentLoaded', init);
+
