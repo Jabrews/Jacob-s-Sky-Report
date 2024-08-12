@@ -1,4 +1,5 @@
 Hide API KEYS
+- ill need to get new key for security reasons before pushing again.
 
+FINAL : get art for cards and logic for picking and loaing
 
-make it so the data for updating the footer is able to be accessed. Ran out of request so be carfull.

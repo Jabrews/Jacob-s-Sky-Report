@@ -1,3 +1,5 @@
+
+
 const hamburger_icon = document.querySelector('#menu-icon');
 const nav_menu = document.querySelector('.mobile-navbar');
 const parentDiv = document.querySelector('.div-container');
@@ -98,11 +100,11 @@ async function submitGeoLocation(e) {
         console.log(`Coordinates: ${lat}, ${lng}`);
 
         initMap(lat, lng, userAddress);
-        let weatherData = await fetchDataFromApi(lat, lng);
+        let weatherData = await fetchDataFromApi(lat, lng, '');
         console.log('weatherData:', weatherData);
         loadStatDisplay(weatherData);
         loadCardDisplay(weatherData);
-        let footWeatherData = await fetchFooterDataFromApi(lat, lng, "yesterday");
+        let footWeatherData = await fetchDataFromApi(lat, lng, "yesterday");
         changeFooterLabel('Yesterday')
         loadFooterDisplay(footWeatherData);
         show_page()
@@ -173,8 +175,14 @@ function show_page() {
 
 }
 
-function curSuccess(pos) {
+async function curSuccess(pos) {
     initMap(pos.coords.latitude, pos.coords.longitude, `Latitude : ${pos.coords.latitude.toFixed(4)} Longitude : ${pos.coords.longitude.toFixed(4)}`)
+    let weatherData = await fetchDataFromApi(lat, lng, '');
+    loadStatDisplay(weatherData);
+    loadCardDisplay(weatherData);
+    let footWeatherData = await fetchDataFromApi(lat, lng, "yesterday");
+    changeFooterLabel('Yesterday')
+    loadFooterDisplay(footWeatherData);
     show_page()
 }
 
@@ -208,31 +216,19 @@ function initMap(lat, lng, userAddress='') {
 
 
 
-async function fetchDataFromApi(lat, lng) {
-    try {
-        let response = await fetch(`https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${lat},${lng}?key=ZP3RFPFC92PX6ZFAFJFWTKNPZ`);
-        if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}`);
-        }
-        let weatherData = await response.json();
-        return weatherData;
-    } catch (error) {
-        console.error(error);
-        displayError("Failed to fetch weather data");
-        return null;
-    }
-}
-
-async function fetchFooterDataFromApi(lat, lng, type) {
+async function fetchDataFromApi(lat, lng, type='') {
     
     let endPoint = null;
     if (type === 'yesterday') {
-        endPoint = 'yesterday';
+        endPoint = '/yesterday';
+    } else if (type === 'tomorrow') {
+        endPoint = '/tomorrow';
     } else {
-        endPoint = 'tomorrow';
+        endPoint = ''
     }
     try {
-        let response = await fetch(`https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${lat},${lng}/${endPoint}?key=ZP3RFPFC92PX6ZFAFJFWTKNPZ`);
+        console.log('endpont' + endPoint);
+        let response = await fetch(`https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${lat},${lng}${endPoint}?key=EHSE5NA36NBC3KD7PS6NGVYLM`);
         if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
         }
@@ -274,7 +270,7 @@ function changeSection1Content(e) {
 }
 
 
-function changeSection2Content(e) {
+async function changeSection2Content(e) {
     if (e.target.classList.contains('tablinks')) {
         let parentDiv = e.target.parentElement;
         for (let child of parentDiv.children) {
@@ -285,17 +281,15 @@ function changeSection2Content(e) {
 
         if (e.target.classList.contains('yesterday')) {
             changeFooterLabel('Yesterday');
-            let footWeatherData = fetchFooterDataFromApi(lat_global, lng_global, 'yesterday')
+            let footWeatherData = await fetchDataFromApi(lat_global, lng_global, 'yesterday')
 
-            console.log(footWeatherData);
-            
+
             loadFooterDisplay(footWeatherData)
 
         } else {
             changeFooterLabel('Tomorrow');
-            let footWeatherData = fetchFooterDataFromApi(lat_global, lng_global, 'tomorrow')
+            let footWeatherData = await fetchDataFromApi(lat_global, lng_global, 'tomorrow')
             
-            console.log(footWeatherData);
             
             loadFooterDisplay(footWeatherData)
         }
